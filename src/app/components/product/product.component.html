@@ -1,0 +1,10 @@
+<form [formGroup] = 'pointsForm'(submit) = 'OnPointFormSubmit()' >
+
+  Points: <input type="text" formControlName="points" placeholder="points">
+  <div *ngIf="pointsForm.controls['points'].invalid &&
+  (pointsForm.controls['points'].touched ||
+  pointsForm.controls['points'].dirty) ">
+  Invalid Points
+  </div> <br><br>
+  <button [disabled] = "!pointsForm.valid">Save Points</button>
+</form>

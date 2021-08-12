@@ -1,0 +1,26 @@
+<h1> Employee Add Form</h1>
+
+<form [formGroup] = 'employeeForm'(submit) = 'OnEmployeeFormSubmit()' >
+  ID: <input type="text" formControlName="id" placeholder="enter id">
+  <div *ngIf="employeeForm.controls['id'].invalid &&
+  (employeeForm.controls['id'].touched ||
+  employeeForm.controls['id'].dirty) ">
+    Invalid Contact
+  </div>
+  <br><br>
+  Name: <input type="text" formControlName="name" placeholder="enter name">
+  <div *ngIf="employeeForm.controls['name'].invalid &&
+  (employeeForm.controls['name'].touched ||
+  employeeForm.controls['name'].dirty) ">
+    Invalid Name
+  </div>
+  <br><br>
+  Age: <input type="text" formControlName="age" placeholder="enter age">
+  <div *ngIf="employeeForm.controls['age'].invalid &&
+  (employeeForm.controls['age'].touched ||
+  employeeForm.controls['age'].dirty) ">
+    Invalid Age
+  </div>
+  <br><br>
+  <button [disabled] = "!employeeForm.valid">Add Employee</button>
+</form>

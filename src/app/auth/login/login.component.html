@@ -1,0 +1,19 @@
+<h1>Login</h1>
+<form [formGroup] = 'loginForm'(submit) = 'OnLoginFormSubmit()' >
+
+  Username: <input type="text" formControlName="username" placeholder="enter username">
+  <div *ngIf="loginForm.controls['username'].invalid &&
+  (loginForm.controls['username'].touched ||
+  loginForm.controls['username'].dirty) ">
+    Invalid Username
+  </div>
+  <br><br>
+  Password: <input type="text" formControlName="password" placeholder="enter password">
+  <div *ngIf="loginForm.controls['password'].invalid &&
+  (loginForm.controls['password'].touched ||
+  loginForm.controls['password'].dirty) ">
+    Invalid Password
+  </div>
+  <br><br>
+  <button [disabled] = "!loginForm.valid">Login</button>
+</form>

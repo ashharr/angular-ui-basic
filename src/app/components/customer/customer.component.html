@@ -1,0 +1,10 @@
+your Achievements : <br> {{points}}
+<ng-container *ngIf="points>50;then badge1 else badge2"></ng-container>
+
+<ng-template #badge1>
+  <h2>Your Badge 1</h2>
+</ng-template>
+
+<ng-template #badge2>
+  <h2>Your Badge 2</h2>
+</ng-template>
